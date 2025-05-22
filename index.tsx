@@ -200,12 +200,12 @@ async function run(value: string) {
     }
 
     if (frameCount < 2) {
-      updateStatus('Failed to generate any frames. Try another prompt.');
+      updateStatus('Ơ kìa! Tạo lỗi rùi! Bạn thử lại prompt khác nhe! Cho bạn cục kẹo ăn đỡ buồn nè. 🍬');
       return false;
     }
 
     // Update status
-    updateStatus('Creating GIF...');
+    updateStatus('Tớ đang tạo nè! Bạn đợi xíu thôi nha. Ăn kẹo khom? 🍭');
 
     // Create the GIF just like in the original
     const img = await createGifFromPngs(images);
@@ -236,11 +236,11 @@ async function run(value: string) {
       }, 50);
     }
 
-    updateStatus('Done!');
+    updateStatus('Xong rùi né! Nắng lên rùi 🌞');
   } catch (error) {
     const msg = parseError(error);
     console.error('Error generating animation:', error);
-    updateStatus(`Error generating animation: ${msg}`);
+    updateStatus(`Ơ này! Lỗi rùi. Mã lỗi là [${msg}]. Bạn vui lòng liên hệ tớ để sửa lỗi nhe! Tớ luôn sẵn sàng nè! Ahihi`);
     return false;
   } finally {
     if (generateButton) {
