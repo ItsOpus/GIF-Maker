@@ -114,7 +114,7 @@ async function run(value: string) {
   switchTab('frames');
   if (resultContainer) resultContainer.style.display = 'none';
 
-  updateStatus('Generating frames...');
+  updateStatus('Tớ đang tạo khung hình nè! Đợi tớ xíu nha! 🥰');
   if (generateButton) {
     generateButton.disabled = true;
     generateButton.classList.add('loading');
@@ -126,7 +126,7 @@ async function run(value: string) {
       contents: value,
       config: {
         temperature: 1,
-        systemInstruction: `**Generate simple, animated doodle GIFs on white from user input, prioritizing key visual identifiers in an animated doodle style with ethical considerations.**
+        systemInstruction: `**Generate simple, cute, animated doodle GIFs on white from user input, prioritizing key visual identifiers in an animated doodle style with ethical considerations.**
 **Core GIF:** Doodle/cartoonish (simple lines, stylized forms, no photorealism), subtle looping motion (primary subject(s) only: wiggle, shimmer, etc.), white background, lighthearted/positive tone (playful, avoids trivializing serious subjects), uses specified colors (unless monochrome/outline requested).
 **Input Analysis:** Identify subject (type, specificity), prioritize visual attributes (hair C/T, skin tone neutrally if discernible/needed, clothes C/P, accessories C, facial hair type, other distinct features neutrally for people; breed, fur C/P for animals; key parts, colors for objects), extract text (content, style hints described, display as requested: speech bubble [format: 'Speech bubble says "[Text]" is persistent.'], caption/title [format: 'with the [title/caption] "[Text]" [position]'], or text-as-subject [format: 'the word "[Text]" in [style/color description]']), note style modifiers (e.g., "pencil sketch," "monochrome"), and action (usually "subtle motion"). If the subject or description is too vague, add specific characteristics to make it more unique and detailed.
 **Prompt Template:** "[Style Descriptor(s)] [Subject Description with Specificity, Attributes, Colors, Skin Tone if applicable] [Text Component if applicable and NOT speech bubble]. [Speech Bubble Component if applicable]"
@@ -224,7 +224,7 @@ async function run(value: string) {
       downloadButton.onclick = () => {
         const a = document.createElement('a') as HTMLAnchorElement;
         a.href = img.src;
-        a.download = 'magical-animation.gif';
+        a.download = 'bemzaidepchai.gif';
         a.click();
       };
       resultContainer.appendChild(downloadButton);
@@ -261,13 +261,13 @@ function main() {
           const retries = 3;
           for (let i = 0; i < retries; i++) {
             if (await run(value)) {
-              console.log('Done.');
+              console.log('Xong rồi nè! Nắng lên rồi! ☀️');
               return;
             } else {
-              console.log(`Retrying...`);
+              console.log(`Ơ kìa! Lỗi rùi! Tớ phải thử lại nè!`);
             }
           }
-          console.log('Giving up :(');
+          console.log('Ơ! Lỗi rùi! Bạn thử lại sau nè!');
         }
       }
     });
