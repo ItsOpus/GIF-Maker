@@ -164,7 +164,7 @@ async function run(value: string) {
         for (const part of chunk.candidates[0].content.parts) {
           if (part.inlineData && framesContainer) {
             frameCount++;
-            updateStatus(`Òmm! Tớ đã tạo được khung hình thứ <b>${frameCount}</b> rùi né! Dui hem? Dii hem?`);
+            updateStatus(`Òmm! Tớ đã tạo được khung hình thứ ${frameCount} rùi né! Dui hem? Dui hem?`);
 
             // Create a frame element for our UI
             const frameElement = document.createElement('div');
